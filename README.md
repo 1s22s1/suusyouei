@@ -13,3 +13,9 @@ julia> format(".")
 ```console
 julia test_answer.jl
 ```
+
+または
+
+```console
+go test
+```
