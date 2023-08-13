@@ -63,3 +63,13 @@ func q2(n int) int {
 		n--
 	}
 }
+
+func q3(n int) int {
+	for {
+		if len(collatz(n)) == 256 {
+			return n
+		}
+
+		n++
+	}
+}

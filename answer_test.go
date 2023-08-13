@@ -149,3 +149,29 @@ func TestQ2(t *testing.T) {
 		})
 	}
 }
+
+func TestQ3(t *testing.T) {
+	type args struct {
+		n int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "normal1",
+			args: args{n: 1},
+			want: 20830,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := q3(tt.args.n); got != tt.want {
+				t.Errorf("q3() + %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
