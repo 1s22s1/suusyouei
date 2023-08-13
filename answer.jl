@@ -15,10 +15,6 @@ function isabundantnumber(number)
     sum(divisor(number)) - number > number
 end
 
-function isdeficientnumber(number)
-    sum(divisor(number)) - number < number
-end
-
 function isprime(number)
     for i = 2:floor(sqrt(number))
         if (number % i) == 0

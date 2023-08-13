@@ -12,9 +12,6 @@ function main()
     @testset "Sum of divisior" begin
         @test Answer.isabundantnumber(12) == true
         @test Answer.isabundantnumber(6) == false
-
-        @test Answer.isdeficientnumber(8) == true
-        @test Answer.isdeficientnumber(12) == false
     end
 
     @testset "Prime" begin

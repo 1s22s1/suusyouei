@@ -7,7 +7,6 @@ julia> using JuliaFormatter
 julia> format(".")
 ```
 
-
 ## Run test
 
 ```console
