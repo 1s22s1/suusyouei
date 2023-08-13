@@ -30,7 +30,38 @@ func TestDivisor(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := divisor(tt.args.n); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("q1() + %v, want %v", got, tt.want)
+				t.Errorf("divisor() + %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestIsAbundant(t *testing.T) {
+	type args struct {
+		n int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "normal1",
+			args: args{n: 6},
+			want: false,
+		},
+		{
+			name: "normal2",
+			args: args{n: 12},
+			want: true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := isAbundant(tt.args.n); got != tt.want {
+				t.Errorf("isAbundant() + %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -12,6 +12,20 @@ func divisor(n int) []int {
 	return x
 }
 
+func isAbundant(n int) bool {
+	var sum int = 0
+
+	for _, x := range divisor(n) {
+		sum += x
+	}
+
+	if sum > n {
+		return true
+	} else {
+		return false
+	}
+}
+
 func q1(n int) []int {
 	return divisor(n)
 }
