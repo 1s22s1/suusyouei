@@ -67,6 +67,37 @@ func TestIsAbundant(t *testing.T) {
 	}
 }
 
+func TestCollatz(t *testing.T) {
+	type args struct {
+		n int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{
+			name: "normal1",
+			args: args{n: 1},
+			want: []int{1, 4, 2, 1},
+		},
+		{
+			name: "normal2",
+			args: args{n: 3},
+			want: []int{3, 10, 5, 16, 8, 4, 2, 1},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := collatz(tt.args.n); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("collatz() + %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func TestQ1(t *testing.T) {
 	type args struct {
 		n int

@@ -28,6 +28,24 @@ func isAbundant(n int) bool {
 	}
 }
 
+func collatz(n int) []int {
+	var x []int = []int{n}
+
+	for {
+		if (n % 2) == 0 {
+			n = n / 2
+		} else {
+			n = n*3 + 1
+		}
+
+		x = append(x, n)
+
+		if n == 1 {
+			return x
+		}
+	}
+}
+
 func q1(n int) []int {
 	return divisor(n)
 }
