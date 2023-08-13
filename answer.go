@@ -1,5 +1,7 @@
 package answer
 
+import "os"
+
 func divisor(n int) []int {
 	var x []int
 
@@ -28,4 +30,18 @@ func isAbundant(n int) bool {
 
 func q1(n int) []int {
 	return divisor(n)
+}
+
+func q2(n int) int {
+	for {
+		if isAbundant(n) {
+			return n
+		}
+
+		if n < 0 {
+			os.Exit(1)
+		}
+
+		n--
+	}
 }
