@@ -1,5 +1,5 @@
-# 数匠営
-## 整形する
+# Suu-Syou-Ei
+## Fromat code
 
 ```console
 russ@penguin:~/src/suusyouei$ julia -q
@@ -8,13 +8,13 @@ julia> format(".")
 ```
 
 
-## テストする
+## Run test
 
 ```console
 julia test_answer.jl
 ```
 
-または
+or
 
 ```console
 go test
