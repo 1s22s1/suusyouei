@@ -19,7 +19,7 @@ func isAbundant(n int) bool {
 		sum += x
 	}
 
-	if sum > n {
+	if sum-n > n {
 		return true
 	} else {
 		return false
