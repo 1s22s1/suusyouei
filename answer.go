@@ -1,6 +1,8 @@
 package answer
 
-import "os"
+import (
+	"os"
+)
 
 func divisor(n int) []int {
 	var x []int
@@ -46,6 +48,16 @@ func collatz(n int) []int {
 	}
 }
 
+func isPrime(n int) bool {
+	for i := 2; i < n-1; i++ {
+		if (n % i) == 0 {
+			return false
+		}
+	}
+
+	return true
+}
+
 func q1(n int) []int {
 	return divisor(n)
 }
@@ -72,4 +84,8 @@ func q3(n int) int {
 
 		n++
 	}
+}
+
+func q4(n int) bool {
+	return isPrime(n)
 }

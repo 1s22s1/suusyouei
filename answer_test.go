@@ -67,6 +67,37 @@ func TestIsAbundant(t *testing.T) {
 	}
 }
 
+func TestIsPrime(t *testing.T) {
+	type args struct {
+		n int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "normal1",
+			args: args{n: 3},
+			want: true,
+		},
+		{
+			name: "normal2",
+			args: args{n: 4},
+			want: false,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := isPrime(tt.args.n); got != tt.want {
+				t.Errorf("isPrime() + %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func TestCollatz(t *testing.T) {
 	type args struct {
 		n int
@@ -135,7 +166,7 @@ func TestQ2(t *testing.T) {
 		want int
 	}{
 		{
-			name: "normal1",
+			name: "normal",
 			args: args{n: 100000},
 			want: 100000,
 		},
@@ -161,7 +192,7 @@ func TestQ3(t *testing.T) {
 		want int
 	}{
 		{
-			name: "normal1",
+			name: "normal",
 			args: args{n: 1},
 			want: 20830,
 		},
@@ -171,6 +202,32 @@ func TestQ3(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := q3(tt.args.n); got != tt.want {
 				t.Errorf("q3() + %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestQ4(t *testing.T) {
+	type args struct {
+		n int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "normal",
+			args: args{n: 1356361},
+			want: false,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := q4(tt.args.n); got != tt.want {
+				t.Errorf("q4() + %v, want %v", got, tt.want)
 			}
 		})
 	}
