@@ -1,8 +1,9 @@
 package answer
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestDivisor(t *testing.T) {
@@ -29,8 +30,8 @@ func TestDivisor(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := divisor(tt.args.n); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("divisor() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, divisor(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -60,8 +61,8 @@ func TestIsAbundant(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isAbundant(tt.args.n); got != tt.want {
-				t.Errorf("isAbundant() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, isAbundant(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -91,8 +92,8 @@ func TestIsPrime(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isPrime(tt.args.n); got != tt.want {
-				t.Errorf("isPrime() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, isPrime(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -122,8 +123,8 @@ func TestCollatz(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := collatz(tt.args.n); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("collatz() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, collatz(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -148,8 +149,8 @@ func TestQ1(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := q1(tt.args.n); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("q1() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, q1(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -174,8 +175,8 @@ func TestQ2(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := q2(tt.args.n); got != tt.want {
-				t.Errorf("q2() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, q2(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -200,8 +201,8 @@ func TestQ3(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := q3(tt.args.n); got != tt.want {
-				t.Errorf("q3() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, q3(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
@@ -226,8 +227,8 @@ func TestQ4(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := q4(tt.args.n); got != tt.want {
-				t.Errorf("q4() + %v, want %v", got, tt.want)
+			if diff := cmp.Diff(tt.want, q4(tt.args.n)); diff != "" {
+				t.Error(diff)
 			}
 		})
 	}
